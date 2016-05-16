@@ -69,7 +69,7 @@ public class TakeOffFailureHandler extends AperiodicEventHandler
 		if (currentSpeed < threshold)
 		{
 			System.out.println("Failure: Aborting");
-			takeoffMission.abort();
+			takeoffMission.takeOffAbort();
 			takeoffMission.requestTermination();
 		} else
 		{

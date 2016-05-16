@@ -14,7 +14,7 @@ import javax.safetycritical.StorageParameters;
 import javax.scj.util.Const;
 import javax.safetycritical.Mission;
 
-public class LandMission extends Mission //implements LandingGearUser
+public class LandMission extends Mission implements LandingGearUser
 {
 	private final MainMission controllingMission;
 
@@ -85,38 +85,29 @@ public class LandMission extends Mission //implements LandingGearUser
 	 * called when landing gear is deployed, sets
 	 * <code>LandingGearDeployed</code> to <code>true</code>
 	 */
+	 @Override
 	public synchronized void deployLandingGear()
 	{
 		landingGearDeployed = true;
 	}
 
-
+	@Override
 	public void stowLandingGear()
 	{
 		landingGearDeployed = false;
 	}
 
-
+	@Override
 	public boolean isLandingGearDeployed()
 	{
 		return landingGearDeployed;
 	}
 
-	public MainMission getControllingMission()
-	{
-		return controllingMission;
-	}
-
-	public void abort()
-	{
-		abort = true;
-	}
-
 	@Override
 	public boolean cleanUp()
 	{
-		System.out.println("Land Mission Cleanup, Returning " + abort);
-		return !abort;
+		System.out.println("Land Mission Cleanup");
+		return false;
 	}
 
 }

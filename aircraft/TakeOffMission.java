@@ -15,7 +15,7 @@ import javax.scj.util.Const;
 import javax.realtime.PeriodicParameters;
 import javax.safetycritical.Mission;
 
-public class TakeOffMission extends Mission //implements LandingGearUser
+public class TakeOffMission extends Mission implements LandingGearUser
 {
 	final double SAFE_AIRSPEED_THRESHOLD = 10.00;
 	final double TAKEOFF_ALTITUDE = 10.00;
@@ -26,9 +26,6 @@ public class TakeOffMission extends Mission //implements LandingGearUser
 
 	private boolean abort = false;
 
-	//int maxP = 5;//PriorityScheduler.instance().getMaxPriority();
-	//Limitation: only literals as params for params
- 
 	/**
 	 * Is the landing gear deployed?
 	 */
@@ -89,22 +86,13 @@ public class TakeOffMission extends Mission //implements LandingGearUser
 		return Const.MISSION_MEM_DEFAULT;
 	}
 
-	public void abort()
+
+	public void takeOffAbort()
 	{
 		abort = true;
 	}
 
-	public MainMission getControllingMission()
-	{
-		return controllingMission;
-	}
-
-	public void setControllingMission(MainMission controllingMission)
-	{
-		this.controllingMission = controllingMission;
-	}
-
-
+	@Override
 	public synchronized void deployLandingGear()
 	{
 		landingGearDeployed = true;
@@ -113,17 +101,17 @@ public class TakeOffMission extends Mission //implements LandingGearUser
 	@Override
 	public boolean cleanUp()
 	{
-		System.out.println("Take Off Mission Cleanup, Returning " + abort);
+		System.out.println("Take Off Mission Cleanup, Returning " + !abort);
 		return !abort;
 	}
 
-
+	@Override
 	public void stowLandingGear()
 	{
 		landingGearDeployed = false;
 	}
 
-
+	@Override
 	public boolean isLandingGearDeployed()
 	{
 		return landingGearDeployed;
