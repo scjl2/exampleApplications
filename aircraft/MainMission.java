@@ -22,7 +22,6 @@ public class MainMission extends Mission
 	 */
 	final double ALTITUDE_READING_ON_GROUND = 0.0;
 
-	int test = 0;
 
 	// Evn Mon Variables
 	private double cabinPressure;
