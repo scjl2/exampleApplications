@@ -12,9 +12,10 @@ import javax.realtime.PriorityParameters;
 import javax.realtime.RelativeTime;
 import javax.safetycritical.PriorityScheduler;
 import javax.safetycritical.StorageParameters;
+import javax.safetycritical.Mission;
 import javax.scj.util.Const;
 
-public class CruiseMission extends ModeMission
+public class CruiseMission extends Mission
 {
 	private final MainMission controllingMission;
 
@@ -50,16 +51,6 @@ public class CruiseMission extends ModeMission
 						new RelativeTime(0, 0), new RelativeTime(10, 0)),
 				storageParametersSchedulable, "Cruise Controller", controllingMission);
 		navigationMonitor.register();
-
-		/**
-		 * Handler simulating a button push to begin landing
-		 */
-		//AperiodicSimulator landSim = new AperiodicSimulator(
-		//		new PriorityParameters(5), new PeriodicParameters(
-		//				new RelativeTime(0, 0), new RelativeTime(10, 0)),
-		//		storageParametersSchedulable, beginLandingHandler);
-		//landSim.register();
-
 	}
 
 	/**
@@ -70,10 +61,4 @@ public class CruiseMission extends ModeMission
 	{
 		return Const.MISSION_MEM_DEFAULT;
 	}
-
-	public MainMission getControllingMission()
-	{
-		return controllingMission;
-	}
-
 }
