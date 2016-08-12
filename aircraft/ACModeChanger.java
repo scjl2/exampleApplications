@@ -96,7 +96,7 @@ public class ACModeChanger extends MissionSequencer<Mission> implements ModeChan
 	@Override
 	protected Mission getNextMission()
 	{
-		return (ModeMission) currentMode;
+		return (Mission) currentMode;
 /*
 		if (modesLeft == 3)
 		{
