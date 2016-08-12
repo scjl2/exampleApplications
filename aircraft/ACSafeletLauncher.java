@@ -8,7 +8,7 @@ package aircraft;
 
 import javax.safetycritical.LaunchLevel2;
 
-public class ACSafeletExecuter
+public class ACSafeletLauncher
 {
 
 	/**
