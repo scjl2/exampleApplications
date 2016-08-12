@@ -11,6 +11,8 @@ import javax.realtime.PriorityParameters;
 import javax.safetycritical.PeriodicEventHandler;
 import javax.safetycritical.StorageParameters;
 
+import devices.Console;
+
 public class InstrumentLandingSystemMonitor extends PeriodicEventHandler
 {
 	private final LandMission mission;
@@ -42,7 +44,7 @@ public class InstrumentLandingSystemMonitor extends PeriodicEventHandler
 	@Override
 	public void handleAsyncEvent()
 	{
-		System.out.println("Checking ILS");
+	  Console.println("Checking ILS");
 
 	}
 

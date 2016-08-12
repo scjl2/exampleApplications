@@ -15,6 +15,8 @@ import javax.realtime.PriorityParameters;
 import javax.safetycritical.AperiodicEventHandler;
 import javax.safetycritical.StorageParameters;
 
+import devices.Console;
+
 public class SafeLandingHandler extends AperiodicEventHandler
 {
 	/**
@@ -59,11 +61,11 @@ public class SafeLandingHandler extends AperiodicEventHandler
 		// in both cases this failure should be flagged somewhere
 		if (altitude < threshold)
 		{
-			System.out.println("Failure: Pull Up");
+		  Console.println("Failure: Pull Up");
 			// Also perform some recovery action here, maybe a new mode
 		} else
 		{
-			System.out.println("Failure: Continue With Landing");
+		  Console.println("Failure: Continue With Landing");
 		}
 	}
 

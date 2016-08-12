@@ -11,6 +11,8 @@ import javax.realtime.PriorityParameters;
 import javax.safetycritical.AperiodicEventHandler;
 import javax.safetycritical.StorageParameters;
 
+import devices.Console;
+
 public class CommunicationsHandler extends AperiodicEventHandler
 {
 	/**
@@ -37,6 +39,6 @@ public class CommunicationsHandler extends AperiodicEventHandler
 	@Override
 	public void handleAsyncEvent()
 	{
-		System.out.println("Handling Comms");
+	  Console.println("Handling Comms");
 	}
 }

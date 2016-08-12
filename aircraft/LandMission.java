@@ -14,6 +14,8 @@ import javax.safetycritical.StorageParameters;
 import javax.scj.util.Const;
 import javax.safetycritical.Mission;
 
+import devices.Console;
+
 public class LandMission extends Mission implements LandingGearUser
 {
 	private final MainMission controllingMission;
@@ -106,7 +108,7 @@ public class LandMission extends Mission implements LandingGearUser
 	@Override
 	public boolean cleanUp()
 	{
-		System.out.println("Land Mission Cleanup");
+	  Console.println("Land Mission Cleanup");
 		return false;
 	}
 

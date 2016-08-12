@@ -14,6 +14,8 @@ import javax.safetycritical.AperiodicEventHandler;
 import javax.safetycritical.PeriodicEventHandler;
 import javax.safetycritical.StorageParameters;
 
+import devices.Console;
+
 public class TakeOffMonitor extends PeriodicEventHandler
 {
 	/**
@@ -58,7 +60,7 @@ public class TakeOffMonitor extends PeriodicEventHandler
 	@Override
 	public void handleAsyncEvent()
 	{
-		System.out.println("Reading Altitude");
+	  Console.println("Reading Altitude");
 
 	//	double altitude = takeoffMission.getControllingMission().getAltitude();
 	//REFACTORING

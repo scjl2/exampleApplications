@@ -12,6 +12,8 @@ import javax.safetycritical.AperiodicEventHandler;
 import javax.safetycritical.PeriodicEventHandler;
 import javax.safetycritical.StorageParameters;
 
+import devices.Console;
+
 public class AperiodicSimulator extends PeriodicEventHandler
 {
 	/**
@@ -47,7 +49,7 @@ public class AperiodicSimulator extends PeriodicEventHandler
 	@Override
 	public void handleAsyncEvent()
 	{
-		System.out.println("Simulating AperiodicEvent");
+	  Console.println("Simulating AperiodicEvent");
 		event.release();
 	}
 }

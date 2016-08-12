@@ -12,6 +12,8 @@ import javax.safetycritical.AperiodicEventHandler;
 import javax.safetycritical.Mission;
 import javax.safetycritical.StorageParameters;
 
+import devices.Console;
+
 public class BeginLandingHandler extends AperiodicEventHandler
 {
 	private Mission controllingMission;
@@ -42,7 +44,7 @@ public class BeginLandingHandler extends AperiodicEventHandler
 	@Override
 	public void handleAsyncEvent()
 	{
-		System.out.println("Begin Landing");
+	  Console.println("Begin Landing");
 		controllingMission.requestTermination();
 
 	}

@@ -11,6 +11,8 @@ import javax.realtime.PriorityParameters;
 import javax.safetycritical.PeriodicEventHandler;
 import javax.safetycritical.StorageParameters;
 
+import devices.Console;
+
 public class FlightSensorsMonitor extends PeriodicEventHandler
 {
 	MainMission controllingMission;
@@ -41,7 +43,7 @@ public class FlightSensorsMonitor extends PeriodicEventHandler
 	@Override
 	public void handleAsyncEvent()
 	{
-		System.out.println("Checking Flight Sensors");
+	  Console.println("Checking Flight Sensors");
 
 		// read air speed
 		controllingMission.setAirSpeed(0);

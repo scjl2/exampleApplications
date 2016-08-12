@@ -9,11 +9,12 @@ package aircraft;
 import javax.realtime.AperiodicParameters;
 import javax.realtime.PriorityParameters;
 import javax.realtime.RelativeTime;
-import javax.safetycritical.PriorityScheduler;
 import javax.safetycritical.StorageParameters;
 import javax.scj.util.Const;
 import javax.realtime.PeriodicParameters;
 import javax.safetycritical.Mission;
+
+import devices.Console;
 
 public class TakeOffMission extends Mission implements LandingGearUser
 {
@@ -52,7 +53,7 @@ public class TakeOffMission extends Mission implements LandingGearUser
 
 		// Load the schedulables for this mission
 
-		LandingGearHandlerTakeOff landingGearHandler = new LandingGearHandlerTakeOff(
+		LandingGearHandler landingGearHandler = new LandingGearHandler(
 				new PriorityParameters(5), new AperiodicParameters(),
 				storageParametersSchedulable, "Landing Gear Handler", this);
 
@@ -101,7 +102,7 @@ public class TakeOffMission extends Mission implements LandingGearUser
 	@Override
 	public boolean cleanUp()
 	{
-		System.out.println("Take Off Mission Cleanup, Returning " + !abort);
+	  Console.println("Take Off Mission Cleanup, Returning " + !abort);
 		return !abort;
 	}
 

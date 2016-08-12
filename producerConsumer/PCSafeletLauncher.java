@@ -5,7 +5,7 @@ import javax.safetycritical.LaunchLevel2;
 import devices.Console;
 
 //Application entry point, runs the Safelet
-public class PCSafeletLauncher
+public class PCSafeletLauncher 
 {
 	public static void main(String[] args)
 	{

@@ -14,6 +14,8 @@ import javax.safetycritical.AperiodicEventHandler;
 import javax.safetycritical.StorageParameters;
 //import javax.safetycritical.LandMission;
 
+import devices.Console;
+
 public class LandingGearHandlerLand extends AperiodicEventHandler
 {
 	/**
@@ -50,7 +52,7 @@ public class LandingGearHandlerLand extends AperiodicEventHandler
 	@Override
 	public void handleAsyncEvent()
 	{
-		System.out.println("Deploying Landing Gear");
+	  Console.println("Deploying Landing Gear");
 
 		boolean landingGearIsDeployed = mission.isLandingGearDeployed();
 

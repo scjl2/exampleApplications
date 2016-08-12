@@ -14,6 +14,8 @@ import javax.realtime.PriorityParameters;
 import javax.safetycritical.AperiodicEventHandler;
 import javax.safetycritical.StorageParameters;
 
+import devices.Console;
+
 public class TakeOffFailureHandler extends AperiodicEventHandler
 {
 	/**
@@ -73,7 +75,7 @@ public class TakeOffFailureHandler extends AperiodicEventHandler
 			takeoffMission.requestTermination();
 		} else
 		{
-			System.out.println("Failure: Continue and Land");
+		  Console.println("Failure: Continue and Land");
 		}
 	}
 

@@ -11,6 +11,8 @@ import javax.realtime.PriorityParameters;
 import javax.safetycritical.AperiodicEventHandler;
 import javax.safetycritical.StorageParameters;
 
+import devices.Console;
+
 public class LandHandler extends AperiodicEventHandler
 {
 	/**
@@ -38,7 +40,7 @@ public class LandHandler extends AperiodicEventHandler
 	@Override
 	public void handleAsyncEvent()
 	{
-		System.out.println("Handling Landing");
+	  Console.println("Handling Landing");
 
 	}
 }

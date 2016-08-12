@@ -11,6 +11,8 @@ import javax.realtime.PriorityParameters;
 import javax.safetycritical.PeriodicEventHandler;
 import javax.safetycritical.StorageParameters;
 
+import devices.Console;
+
 //Handler for monitoring the conditions which must be true for the craft to start landing
 public class GroundDistanceMonitor extends PeriodicEventHandler
 {
@@ -57,7 +59,7 @@ public class GroundDistanceMonitor extends PeriodicEventHandler
 
 		if (distance == readingOnGround)
 		{
-			System.out.println("Aircraft Landed, Terminating Mission");
+		  Console.println("Aircraft Landed, Terminating Mission");
 			mainMission.requestTermination();
 		}
 	}

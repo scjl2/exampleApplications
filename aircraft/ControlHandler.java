@@ -11,6 +11,8 @@ import javax.realtime.PriorityParameters;
 import javax.safetycritical.AperiodicEventHandler;
 import javax.safetycritical.StorageParameters;
 
+import devices.Console;
+
 public class ControlHandler extends AperiodicEventHandler
 {
 	/**
@@ -37,7 +39,7 @@ public class ControlHandler extends AperiodicEventHandler
 	@Override
 	public void handleAsyncEvent()
 	{
-		System.out.println("Handling Controls");
+	  Console.println("Handling Controls");
 	}
 
 
