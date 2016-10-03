@@ -13,12 +13,12 @@ class MyMission extends Mission
 	@SCJAllowed(Level.SUPPORT)
 	protected void initialize()
 	{
-		AperiodicParameters apParams = new AperiodicParameters(new RelativeTime(5, 0), null);
-		APEH apeh = new APEH(MyApp.pri, apParams, MyApp.storage, "APEH", this);
+//		AperiodicParameters apParams = new AperiodicParameters(new RelativeTime(5, 0), null);
+		APEH apeh = new APEH(MyApp.pri, new AperiodicParameters(new RelativeTime(5, 0), null), MyApp.storage, "APEH", this);
 		apeh.register();
 		
-		PeriodicParameters pParams = new PeriodicParameters(new RelativeTime(60,0), new RelativeTime(5,0));
-		PEH peh = new PEH(MyApp.pri, pParams ,MyApp.storage, "PEH", apeh);
+//		PeriodicParameters pParams = new PeriodicParameters(new RelativeTime(60,0), new RelativeTime(5,0));
+		PEH peh = new PEH(MyApp.pri, new PeriodicParameters(new RelativeTime(60,0), new RelativeTime(5,0)) ,MyApp.storage, "PEH", apeh);
 		peh.register();
 		
 		
