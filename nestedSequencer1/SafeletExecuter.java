@@ -10,17 +10,16 @@ import javax.safetycritical.LaunchLevel2;
 
 import devices.Console;
 
-
-public class SafeletExecuter 
+public class SafeletExecuter
 {
-	/**
-	 * Runs the Safelet, which starts the application
-	 */
-	public static void main(String[] args)
-	{
-			
-		Console.println("Launcher");
-		
-		new LaunchLevel2(new MySafelet());
-	}
+  /**
+   * Runs the Safelet, which starts the application
+   */
+  public static void main(String[] args)
+  {
+
+    Console.println("Launcher");
+
+    new LaunchLevel2(new MySafelet());
+  }
 }

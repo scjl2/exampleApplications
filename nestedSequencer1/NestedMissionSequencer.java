@@ -15,30 +15,30 @@ import devices.Console;
 public class NestedMissionSequencer extends MissionSequencer<Mission>
 {
 
-	private boolean returnedMission = false;
+  private boolean returnedMission = false;
 
-	public NestedMissionSequencer(PriorityParameters priority,
-			StorageParameters storage)
-	{
-		super(priority, storage, null);
-		Console.println("Nested Mission Sequencer: Construct ");
+  public NestedMissionSequencer(PriorityParameters priority, StorageParameters storage)
+  {
+    super(priority, storage, null);
+    Console.println("Nested Mission Sequencer: Construct ");
 
-	}
+  }
 
-	@Override
-	protected Mission getNextMission()
-	{
-		Console.println("Mode Changer: getNextMission ");
+  @Override
+  protected Mission getNextMission()
+  {
+    Console.println("Mode Changer: getNextMission ");
 
-		if (returnedMission)
-		{
-			return null;
-		} else
-		{
-			returnedMission = true;
-			return new NestedMission();
-		}
+    if (returnedMission)
+    {
+      return null;
+    }
+    else
+    {
+      returnedMission = true;
+      return new NestedMission();
+    }
 
-	}
+  }
 
 }

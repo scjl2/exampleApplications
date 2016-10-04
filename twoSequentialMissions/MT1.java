@@ -19,8 +19,7 @@ class MT1 extends ManagedThread
 	public void run()
 	{
 		Console.println("MT1 Release");
-		
-		
+			
 	}
 	
 }

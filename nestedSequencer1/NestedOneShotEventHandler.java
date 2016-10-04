@@ -10,14 +10,15 @@ import devices.Console;
 
 public class NestedOneShotEventHandler extends OneShotEventHandler
 {
-	public NestedOneShotEventHandler(PriorityParameters priority, HighResolutionTime time, AperiodicParameters release, StorageParameters storage) 
-	{
-		super(priority, time, release, storage, null);
-	}
+  public NestedOneShotEventHandler(PriorityParameters priority, HighResolutionTime time,
+      AperiodicParameters release, StorageParameters storage)
+  {
+    super(priority, time, release, storage, null);
+  }
 
-	@Override
-	public void handleAsyncEvent()
-	{
-		Console.println("Nested One-Shot: Release");
-	}
+  @Override
+  public void handleAsyncEvent()
+  {
+    Console.println("Nested One-Shot: Release");
+  }
 }

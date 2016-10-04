@@ -10,7 +10,7 @@ public class MyApp implements Safelet<Mission>
 	@Override
 	public MissionSequencer<Mission> getSequencer() 
 	{
-		return new MySequencer(new PriorityParameters(15), MySCJ.storageParameters);
+		return new MySequencer(new PriorityParameters(15), SafeletLauncher.storageParameters);
 	}
 
 	@Override

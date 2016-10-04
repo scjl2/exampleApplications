@@ -7,27 +7,26 @@ import javax.safetycritical.StorageParameters;
 
 public class ThirdMissionSequencer extends MissionSequencer<Mission>
 {
-   private Mission myMission;
-    private boolean done = false;
+  private boolean done = false;
 
-    public  ThirdMissionSequencer(PriorityParameters priority, StorageParameters storage) 
-	{
-		super(priority, storage,null);
-		myMission = new MyMission3();
+  public ThirdMissionSequencer(PriorityParameters priority, StorageParameters storage)
+  {
+    super(priority, storage, null);
+
+  }
+
+  @Override
+  protected Mission getNextMission()
+  {
+
+    if (done == false)
+    {
+      done = true;
+      return new MyMission3();
     }
-    
-    @Override
-    protected Mission getNextMission() 
-	{
-//    	devices.Console.println(getName() + ":getNextMission");
-	    if (done == false) 
-		{
-	   		done = true;
-		    return myMission;
-		}
-		else
-		{
-			return null;
-		}
-    }    
+    else
+    {
+      return null;
+    }
+  }
 }

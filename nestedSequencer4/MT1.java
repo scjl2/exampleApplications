@@ -8,20 +8,17 @@ import devices.Console;
 
 class MT1 extends ManagedThread
 {
-	
-	public MT1(PriorityParameters pri, StorageParameters storage)
-	{
-		super(pri, storage, null);		
-	}
-	
-	public void thread1Action()
-	{
-	  Console.println("MT1 Release");
-	}
 
-	@Override
-	public void run()
-	{
-	  thread1Action();		
-	}	
+  public MT1(PriorityParameters pri, StorageParameters storage)
+  {
+    super(pri, storage, null);
+  }
+
+ 
+
+  @Override
+  public void run()
+  {
+    Console.println("MT1 Release");
+  }
 }

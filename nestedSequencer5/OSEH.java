@@ -11,22 +11,22 @@ import devices.Console;
 
 class OSEH extends OneShotEventHandler
 {
-	Mission controllingMision;
-	
-	public OSEH(PriorityParameters pri, HighResolutionTime start,
-			AperiodicParameters aParams, StorageParameters storage, Mission controllingMission)
-	{
-		super(pri, start, aParams, storage, null);
-		
-		this.controllingMision = controllingMission;
-	}
+  Mission controllingMision;
 
-	@Override
-	public void handleAsyncEvent()
-	{
-		Console.println("OSEH Release");
-		
-		controllingMision.requestTermination();
-	}
-	
+  public OSEH(PriorityParameters pri, HighResolutionTime start,
+      AperiodicParameters aParams, StorageParameters storage, Mission controllingMission)
+  {
+    super(pri, start, aParams, storage, null);
+
+    this.controllingMision = controllingMission;
+  }
+
+  @Override
+  public void handleAsyncEvent()
+  {
+    Console.println("OSEH Release");
+
+    controllingMision.requestTermination();
+  }
+
 }

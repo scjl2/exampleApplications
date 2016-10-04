@@ -16,9 +16,9 @@ class MissionA extends Mission
 		
 		MT1 thread1 = new MT1(MyApp.pri, MyApp.storage);
 		thread1.register();
-
-		MT2 thread2 = new MT2(MyApp.pri, MyApp.storage);
-		thread2.register();
+//
+//		MT2 thread2 = new MT2(MyApp.pri, MyApp.storage);
+//		thread2.register();
 	}
 
 	@Override

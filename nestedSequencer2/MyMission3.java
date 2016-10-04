@@ -13,7 +13,7 @@ public class MyMission3 extends Mission
 	{
 		devices.Console.println("TopMission1" + ":init");
 		MyPEH3 myPEH = new MyPEH3(new PriorityParameters(10), new PeriodicParameters(new RelativeTime(Clock.getRealtimeClock()),
-				new RelativeTime(1000, 0, Clock.getRealtimeClock())), MySCJ.storageParameters_Handlers, this);
+				new RelativeTime(1000, 0, Clock.getRealtimeClock())), SafeletLauncher.storageParameters_Handlers, this);
 		myPEH.register();
 	}
 

@@ -15,14 +15,11 @@ class MT2 extends ManagedThread
 		
 	}
 	
-	 private void thread2Action()
-	  {
-	    Console.println("MT2 Release");
-	  }
+
 
 	  @Override
 	  public void run()
 	  {
-	    thread2Action();
+	    Console.println("MT2 Release");
 	  }	
 }

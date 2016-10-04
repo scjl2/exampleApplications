@@ -20,7 +20,6 @@ class MT2 extends ManagedThread
 	{
 		Console.println("MT2 Release");
 		
-		
 	}
 	
 }

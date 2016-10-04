@@ -12,10 +12,10 @@ class MissionB extends Mission
 	@SCJAllowed(Level.SUPPORT)
 	protected void initialize()
 	{
-		Console.println("MissionA initialize");
+		Console.println("MissionB initialize");
 		
-		MT1 thread1 = new MT1(MyApp.pri, MyApp.storage);
-		thread1.register();
+//		MT1 thread1 = new MT1(MyApp.pri, MyApp.storage);
+//		thread1.register();
 
 		MT2 thread2 = new MT2(MyApp.pri, MyApp.storage);
 		thread2.register();		

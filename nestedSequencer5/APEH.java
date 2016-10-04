@@ -10,20 +10,20 @@ import devices.Console;
 
 class APEH extends AperiodicEventHandler
 {
-	private Mission controllingMission = null;
-	
-	public APEH(PriorityParameters priority, AperiodicParameters release,
-			StorageParameters storage, String name, Mission controllingMission)
-	{
-		super(priority, release, storage, null);	
-		this.controllingMission = controllingMission;
-	}
+  private Mission controllingMission = null;
 
-	@Override
-	public void handleAsyncEvent()
-	{
-		Console.println("APEH Release");
-		controllingMission.requestTermination();
-	}
-	
+  public APEH(PriorityParameters priority, AperiodicParameters release,
+      StorageParameters storage, String name, Mission controllingMission)
+  {
+    super(priority, release, storage, null);
+    this.controllingMission = controllingMission;
+  }
+
+  @Override
+  public void handleAsyncEvent()
+  {
+    Console.println("APEH Release");
+    controllingMission.requestTermination();
+  }
+
 }

@@ -8,22 +8,22 @@ import devices.Console;
 
 class MidMissionA extends Mission
 {
-	@Override
-	@SCJAllowed(Level.SUPPORT)
-	protected void initialize()
-	{
-		Console.println("Nested Mission initialize");
+  @Override
+  @SCJAllowed(Level.SUPPORT)
+  protected void initialize()
+  {
+    Console.println("Nested Mission initialize");
 
-		BottomMissionSequencerA nestedSequencerA = new BottomMissionSequencerA(MyApp.pri,
-				MyApp.storage, "Nested Mission Sequencer A");
-		nestedSequencerA.register();
+    BottomMissionSequencerA nestedSequencerA = new BottomMissionSequencerA(MyApp.pri,
+        MyApp.storage, "Nested Mission Sequencer A");
+    nestedSequencerA.register();
 
-	}
+  }
 
-	@Override
-	@SCJAllowed(Level.SUPPORT)
-	public long missionMemorySize()
-	{
-		return 1048576;
-	}
+  @Override
+  @SCJAllowed(Level.SUPPORT)
+  public long missionMemorySize()
+  {
+    return 1048576;
+  }
 }

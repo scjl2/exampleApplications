@@ -15,34 +15,32 @@ import devices.Console;
 
 class MyApp implements Safelet<Mission>
 {
-	static PriorityParameters pri = new PriorityParameters(5);
-	static StorageParameters storage = new StorageParameters(
-			Const.OVERALL_BACKING_STORE_DEFAULT - 1000000,
-			Const.PRIVATE_MEM_DEFAULT, 10000 * 2, Const.MISSION_MEM_DEFAULT);
-	
+  static PriorityParameters pri = new PriorityParameters(5);
+  static StorageParameters storage = new StorageParameters(
+      Const.OVERALL_BACKING_STORE_DEFAULT - 1000000, Const.PRIVATE_MEM_DEFAULT,
+      10000 * 2, Const.MISSION_MEM_DEFAULT);
 
-	@Override
-	@SCJAllowed(Level.SUPPORT)
-	@SCJRestricted(Phase.INITIALIZE)
-	public MissionSequencer<Mission> getSequencer()
-	{		
-		MissionSequencer<Mission> mainSequencer = new TopSequencer(pri, storage, "Main Sequencer");
-		return mainSequencer;
-	}
+  @Override
+  @SCJAllowed(Level.SUPPORT)
+  @SCJRestricted(Phase.INITIALIZE)
+  public MissionSequencer<Mission> getSequencer()
+  {
+    return new TopSequencer(pri, storage, "Main Sequencer");
+  }
 
-	@Override
-	@SCJAllowed(Level.SUPPORT)
-	public long immortalMemorySize()
-	{
-		return Const.IMMORTAL_MEM_DEFAULT;
-	}
+  @Override
+  @SCJAllowed(Level.SUPPORT)
+  public long immortalMemorySize()
+  {
+    return Const.IMMORTAL_MEM_DEFAULT;
+  }
 
-	@Override
-	@SCJAllowed(Level.SUPPORT)
-	@SCJRestricted(Phase.INITIALIZE)
-	public void initializeApplication()
-	{
-		Console.println("Init Application");		
-	}
-	
+  @Override
+  @SCJAllowed(Level.SUPPORT)
+  @SCJRestricted(Phase.INITIALIZE)
+  public void initializeApplication()
+  {
+    Console.println("Init Application");
+  }
+
 }

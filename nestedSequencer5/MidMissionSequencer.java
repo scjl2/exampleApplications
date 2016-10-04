@@ -11,38 +11,36 @@ import devices.Console;
 
 class MidMissionSequencer extends MissionSequencer<Mission>
 {
-	private int releases = 0;
-	
-	public MidMissionSequencer(PriorityParameters priority, StorageParameters storage,
-			String name) throws IllegalStateException
-	{
-		super(priority, storage, null);
-	}
+  private int releases = 0;
 
-	@Override
-	@SCJAllowed(Level.SUPPORT)
-	protected Mission getNextMission()
-	{
-//		Console.println(getName()+  " getNextMission");
-		
-		if (releases == 0 )
-		{
-			Mission mission = new MidMissionA();
-		
-			releases ++;
-			return mission;
-		}
-		else if (releases == 1)
-		{
-			Mission mission = new MidMissionB();
-			
-			releases ++;
-			return mission;
-		}
-		else
-		{
-			return null;
-		}
-	}
-	
+  public MidMissionSequencer(PriorityParameters priority, StorageParameters storage,
+      String name) throws IllegalStateException
+  {
+    super(priority, storage, null);
+  }
+
+  @Override
+  @SCJAllowed(Level.SUPPORT)
+  protected Mission getNextMission()
+  {
+    // Console.println(getName()+ " getNextMission");
+
+    if (releases == 0)
+    {
+
+      releases++;
+      return new MidMissionA();
+    }
+    else if (releases == 1)
+    {
+
+      releases++;
+      return new MidMissionB();
+    }
+    else
+    {
+      return null;
+    }
+  }
+
 }
