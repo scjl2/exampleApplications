@@ -8,8 +8,8 @@ import devices.Console;
 
 public class Consumer extends ManagedThread
 {
-  private final PCMission pcMission;
-  private final Buffer buffer;
+  private final PCMission pcMission, buffer;
+//  private final Buffer buffer;
 
   public Consumer(PriorityParameters priority, StorageParameters storage,
       PCMission pcMission)
@@ -17,7 +17,8 @@ public class Consumer extends ManagedThread
     super(priority, storage, null);
 
     this.pcMission = pcMission;
-    buffer = pcMission.getBuffer();
+//    buffer = pcMission.getBuffer();
+    buffer = pcMission;
   }
 
   public void run()
