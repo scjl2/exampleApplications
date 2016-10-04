@@ -14,14 +14,10 @@ class MT1 extends ManagedThread
     super(pri, storage, null);
   }
 
-  private void thread1Action()
-  {
-    Console.println("MT1 Release");
-  }
-
+  
   @Override
   public void run()
   {
-    thread1Action();
+    Console.println("MT1 Release");
   }
 }

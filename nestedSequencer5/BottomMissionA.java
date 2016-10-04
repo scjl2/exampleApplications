@@ -10,25 +10,25 @@ import devices.Console;
 
 class BottomMissionA extends Mission
 {
-	@Override
-	@SCJAllowed(Level.SUPPORT)
-	protected void initialize()
-	{
-		Console.println("MissionA initialize");
-		
-		AperiodicParameters aParams = new AperiodicParameters(new RelativeTime(100,0),null);		
-		OSEH oneShot = new OSEH(MyApp.pri,new RelativeTime(60,0),aParams,MyApp.storage,this);
-		oneShot.register();
+  @Override
+  @SCJAllowed(Level.SUPPORT)
+  protected void initialize()
+  {
+    Console.println("MissionA initialize");
 
-		MT2 thread2 = new MT2(MyApp.pri, MyApp.storage);
-		thread2.register();
+    OSEH oneShot = new OSEH(MyApp.pri, new RelativeTime(60, 0), new AperiodicParameters(new RelativeTime(100, 0), null), MyApp.storage,
+        this);
+    oneShot.register();
 
-	}
+    MT2 thread2 = new MT2(MyApp.pri, MyApp.storage);
+    thread2.register();
 
-	@Override
-	@SCJAllowed(Level.SUPPORT)
-	public long missionMemorySize()
-	{
-		return 1048576;
-	}
+  }
+
+  @Override
+  @SCJAllowed(Level.SUPPORT)
+  public long missionMemorySize()
+  {
+    return 1048576;
+  }
 }

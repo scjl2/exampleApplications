@@ -11,40 +11,37 @@ import devices.Console;
 
 class NestedMissionSequencer extends MissionSequencer<Mission>
 {
-	private int releases = 0;
-	
-	public NestedMissionSequencer(PriorityParameters priority, StorageParameters storage,
-			String name) throws IllegalStateException
-	{
-		super(priority, storage, null);
-	}
+  private int releases = 0;
 
-	@Override
-	@SCJAllowed(Level.SUPPORT)
-	protected Mission getNextMission()
-	{
-//		Console.println(getName() + " getNextMission");
-		
-		if(releases == 0 )
-		{
-			releases ++;
-			Mission mission = new NestedMissionA();
-			
-			return mission;			
-		}
-		else if (releases == 1)
-		{
-			releases ++;
-			Mission mission = new NestedMissionB();
-			
-			return mission;		
-		}
-		else
-		{
-			return null;
-		}
-			
-		
-	}
-	
+  public NestedMissionSequencer(PriorityParameters priority, StorageParameters storage,
+      String name) throws IllegalStateException
+  {
+    super(priority, storage, null);
+  }
+
+  @Override
+  @SCJAllowed(Level.SUPPORT)
+  protected Mission getNextMission()
+  {
+    // Console.println(getName() + " getNextMission");
+
+    if (releases == 0)
+    {
+      releases++;
+
+      return new NestedMissionA();
+    }
+    else if (releases == 1)
+    {
+      releases++;
+
+      return new NestedMissionB();
+    }
+    else
+    {
+      return null;
+    }
+
+  }
+
 }

@@ -11,13 +11,13 @@ public class TopMission1 extends Mission
 	{
 		devices.Console.println("TopMission1" + ":init");
 		
-		FirstMissionSequencer FirstSeq = new FirstMissionSequencer(new PriorityParameters(5), MySCJ.storageParameters);
+		FirstMissionSequencer FirstSeq = new FirstMissionSequencer(new PriorityParameters(5), SafeletLauncher.storageParameters);
 		FirstSeq.register();
 
-		SecondMissionSequencer SecondSeq = new SecondMissionSequencer(new PriorityParameters(15), MySCJ.storageParameters);
+		SecondMissionSequencer SecondSeq = new SecondMissionSequencer(new PriorityParameters(15), SafeletLauncher.storageParameters);
 		SecondSeq.register();
 
-		ThirdMissionSequencer ThirdSeq = new ThirdMissionSequencer(new PriorityParameters(10), MySCJ.storageParameters);
+		ThirdMissionSequencer ThirdSeq = new ThirdMissionSequencer(new PriorityParameters(10), SafeletLauncher.storageParameters);
 		ThirdSeq.register();
 	}
 

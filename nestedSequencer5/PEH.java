@@ -10,24 +10,24 @@ import devices.Console;
 
 class PEH extends PeriodicEventHandler
 {
-	private AperiodicEventHandler apeh = null;
+  private AperiodicEventHandler apeh = null;
 
-	PEH(PriorityParameters priority, PeriodicParameters release,
-			StorageParameters storage, String name, AperiodicEventHandler apeh)
-	{
-		super(priority, release, storage, null);	
-		if(apeh == null)
-		{
-			throw new IllegalArgumentException("apeh cannot be null");
-		}
-		this.apeh=apeh;
-	}
+  PEH(PriorityParameters priority, PeriodicParameters release, StorageParameters storage,
+      String name, AperiodicEventHandler apeh)
+  {
+    super(priority, release, storage, null);
+    if (apeh == null)
+    {
+      throw new IllegalArgumentException("apeh cannot be null");
+    }
+    this.apeh = apeh;
+  }
 
-	@Override
-	public void handleAsyncEvent()
-	{
-		Console.println("PEH Release");
-				
-		apeh.release();
-	}
+  @Override
+  public void handleAsyncEvent()
+  {
+    Console.println("PEH Release");
+
+    apeh.release();
+  }
 }

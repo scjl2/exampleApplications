@@ -7,13 +7,11 @@ import javax.safetycritical.StorageParameters;
 
 public class FirstMissionSequencer extends MissionSequencer<Mission>
 {
-  private Mission myMission;
   private boolean done = false;
 
   public FirstMissionSequencer(PriorityParameters priority, StorageParameters storage)
   {
     super(priority, storage, null);
-    myMission = new MyMission1();
   }
 
   @Override
@@ -23,7 +21,7 @@ public class FirstMissionSequencer extends MissionSequencer<Mission>
     if (done == false)
     {
       done = true;
-      return myMission;
+      return new MyMission1();
     }
     else
     {

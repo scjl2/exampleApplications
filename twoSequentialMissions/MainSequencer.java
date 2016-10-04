@@ -9,38 +9,36 @@ import javax.safetycritical.annotate.SCJAllowed;
 
 class MainSequencer extends MissionSequencer<Mission>
 {
-	private int releases = 0;
-	
-	public MainSequencer(PriorityParameters priority, StorageParameters storage,
-			String name) throws IllegalStateException
-	{
-		super(priority, storage, null);
-	}
+  private int releases = 0;
 
-	@Override
-	@SCJAllowed(Level.SUPPORT)
-	protected Mission getNextMission()
-	{
-//		Console.println(getName()+  " getNextMission");
-		
-		if (releases == 0)
-		{
-			Mission mission = new MissionA();
-		
-			releases ++;
-			return mission;
-		}
-		else if(releases == 1 )
-		{
-			Mission mission = new MissionB();
-			
-			releases ++ ;
-			return mission;
-		}
-		else
-		{
-			return null;
-		}
-	}
-	
+  public MainSequencer(PriorityParameters priority, StorageParameters storage, String name)
+      throws IllegalStateException
+  {
+    super(priority, storage, null);
+  }
+
+  @Override
+  @SCJAllowed(Level.SUPPORT)
+  protected Mission getNextMission()
+  {
+    // Console.println(getName()+ " getNextMission");
+
+    if (releases == 0)
+    {
+
+      releases++;
+      return new MissionA();
+    }
+    else if (releases == 1)
+    {
+
+      releases++;
+      return new MissionB();
+    }
+    else
+    {
+      return null;
+    }
+  }
+
 }

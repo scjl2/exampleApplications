@@ -13,15 +13,12 @@ class MT2 extends ManagedThread
     super(pri, storage, null);
   }
 
-  public void thread2Actions()
-  {
-    Console.println("MT2 Release");
-    Console.println("MT2 Performing Actions");
-  }
+ 
 
   @Override
   public void run()
   {
-    thread2Actions();
+    Console.println("MT2 Release");
+    Console.println("MT2 Performing Actions");
   }
 }
