@@ -16,7 +16,7 @@ class OSEH2 extends OneShotEventHandler
 	public OSEH2(PriorityParameters pri, HighResolutionTime start,
 			AperiodicParameters aParams, StorageParameters storage, Mission controllingMission)
 	{
-		super(pri, start, aParams, storage);
+		super(pri, start, aParams, storage, null);
 		
 		this.controllingMision = controllingMission;
 	}

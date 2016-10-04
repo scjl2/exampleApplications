@@ -12,7 +12,7 @@ public class MySequencer extends MissionSequencer<Mission>
 
     public MySequencer(PriorityParameters priority, StorageParameters storage) 
     {
-	    super(priority, storage,"OM--ms");
+	    super(priority, storage,null);
 
     	myMission = new TopMission1();
     }

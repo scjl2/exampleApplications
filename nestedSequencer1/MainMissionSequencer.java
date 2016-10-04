@@ -30,7 +30,7 @@ public class MainMissionSequencer extends MissionSequencer<Mission>
 	 */
 	public MainMissionSequencer(PriorityParameters pp, StorageParameters sp)
 	{
-		super(pp, sp);
+		super(pp, sp, null);
 		returnedMission = false;
 	}
 

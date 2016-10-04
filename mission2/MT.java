@@ -12,7 +12,7 @@ class MT extends ManagedThread
 	
 	public MT(PriorityParameters pri, StorageParameters storage, MissionA controllingMission)
 	{
-		super(pri, storage);
+		super(pri, storage, null);
 		this.controllingMission = controllingMission;
 	}
 
@@ -20,7 +20,6 @@ class MT extends ManagedThread
 	public void run()
 	{
 		Console.println("MT Release");
-		controllingMission.systemAction();
-		
+		controllingMission.systemAction();		
 	}
 }

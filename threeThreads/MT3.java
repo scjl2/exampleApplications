@@ -11,16 +11,18 @@ class MT3 extends ManagedThread
 	
 	public MT3(PriorityParameters pri, StorageParameters storage)
 	{
-		super(pri, storage);
-		
-	}
-
-	@Override
-	public void run()
-	{
-		Console.println("MT3 Release");
-		
+		super(pri, storage, null);
 		
 	}
 	
+	 private void thread3Action()
+	  {
+	    Console.println("MT3 Release");
+	  }
+
+	  @Override
+	  public void run()
+	  {
+	    thread3Action();
+	  }	
 }

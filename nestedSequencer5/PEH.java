@@ -15,7 +15,7 @@ class PEH extends PeriodicEventHandler
 	PEH(PriorityParameters priority, PeriodicParameters release,
 			StorageParameters storage, String name, AperiodicEventHandler apeh)
 	{
-		super(priority, release, storage);	
+		super(priority, release, storage, null);	
 		if(apeh == null)
 		{
 			throw new IllegalArgumentException("apeh cannot be null");

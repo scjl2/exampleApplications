@@ -20,7 +20,7 @@ public class NestedMissionSequencer extends MissionSequencer<Mission>
 	public NestedMissionSequencer(PriorityParameters priority,
 			StorageParameters storage)
 	{
-		super(priority, storage);
+		super(priority, storage, null);
 		Console.println("Nested Mission Sequencer: Construct ");
 
 	}

@@ -16,7 +16,7 @@ class NestedMissionSequencer extends MissionSequencer<Mission>
 	public NestedMissionSequencer(PriorityParameters priority, StorageParameters storage,
 			String name) throws IllegalStateException
 	{
-		super(priority, storage, name);
+		super(priority, storage, null);
 	}
 
 	@Override

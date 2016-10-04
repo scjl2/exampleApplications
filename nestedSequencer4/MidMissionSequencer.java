@@ -16,7 +16,7 @@ class MidMissionSequencer extends MissionSequencer<Mission>
 	public MidMissionSequencer(PriorityParameters priority, StorageParameters storage,
 			String name) throws IllegalStateException
 	{
-		super(priority, storage, name);
+		super(priority, storage, null);
 	}
 
 	@Override

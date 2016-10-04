@@ -12,7 +12,7 @@ public class ThirdMissionSequencer extends MissionSequencer<Mission>
 
     public  ThirdMissionSequencer(PriorityParameters priority, StorageParameters storage) 
 	{
-		super(priority, storage,"3ms");
+		super(priority, storage,null);
 		myMission = new MyMission3();
     }
     

@@ -1,4 +1,4 @@
-package sequentialMissions;
+package twoSequentialMissions;
 
 import javax.realtime.PriorityParameters;
 import javax.safetycritical.ManagedThread;
@@ -11,7 +11,7 @@ class MT2 extends ManagedThread
 	
 	public MT2(PriorityParameters pri, StorageParameters storage)
 	{
-		super(pri, storage);
+		super(pri, storage, null);
 		
 	}
 

@@ -8,16 +8,20 @@ import devices.Console;
 
 class MT2 extends ManagedThread
 {
-	public MT2(PriorityParameters pri, StorageParameters storage)
-	{
-		super(pri, storage);
-	}
+  public MT2(PriorityParameters pri, StorageParameters storage)
+  {
+    super(pri, storage, null);
+  }
 
-	@Override
-	public void run()
-	{
-		Console.println("MT2 Release");
-		Console.println("MT2 Performing Actions");
+  public void thread2Actions()
+  {
+    Console.println("MT2 Release");
+    Console.println("MT2 Performing Actions");
+  }
 
-	}
+  @Override
+  public void run()
+  {
+    thread2Actions();
+  }
 }

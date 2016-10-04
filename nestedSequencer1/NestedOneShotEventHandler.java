@@ -10,11 +10,9 @@ import devices.Console;
 
 public class NestedOneShotEventHandler extends OneShotEventHandler
 {
-
-
 	public NestedOneShotEventHandler(PriorityParameters priority, HighResolutionTime time, AperiodicParameters release, StorageParameters storage) 
 	{
-		super(priority, time, release, storage);
+		super(priority, time, release, storage, null);
 	}
 
 	@Override

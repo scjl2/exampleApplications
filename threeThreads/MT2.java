@@ -11,16 +11,18 @@ class MT2 extends ManagedThread
 	
 	public MT2(PriorityParameters pri, StorageParameters storage)
 	{
-		super(pri, storage);
-		
-	}
-
-	@Override
-	public void run()
-	{
-		Console.println("MT2 Release");
-		
+		super(pri, storage, null);
 		
 	}
 	
+	 private void thread2Action()
+	  {
+	    Console.println("MT2 Release");
+	  }
+
+	  @Override
+	  public void run()
+	  {
+	    thread2Action();
+	  }	
 }

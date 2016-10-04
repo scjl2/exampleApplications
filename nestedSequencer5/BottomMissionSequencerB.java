@@ -16,7 +16,7 @@ class BottomMissionSequencerB extends MissionSequencer<Mission>
 	public BottomMissionSequencerB(PriorityParameters priority, StorageParameters storage,
 			String name) throws IllegalStateException
 	{
-		super(priority, storage, name);
+		super(priority, storage, null);
 	}
 
 	@Override

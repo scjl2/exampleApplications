@@ -16,7 +16,7 @@ class TopSequencer extends MissionSequencer<Mission>
 	public TopSequencer(PriorityParameters priority, StorageParameters storage,
 			String name) throws IllegalStateException
 	{
-		super(priority, storage, name);
+		super(priority, storage, null);
 	}
 
 	@Override

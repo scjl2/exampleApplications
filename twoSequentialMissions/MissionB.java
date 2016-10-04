@@ -1,4 +1,4 @@
-package sequentialMissions;
+package twoSequentialMissions;
 
 import javax.safetycritical.Mission;
 import javax.safetycritical.annotate.Level;
@@ -18,9 +18,7 @@ class MissionB extends Mission
 		thread1.register();
 
 		MT2 thread2 = new MT2(MyApp.pri, MyApp.storage);
-		thread2.register();
-
-		
+		thread2.register();		
 	}
 
 	@Override

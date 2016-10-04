@@ -1,4 +1,4 @@
-package sequentialMissions;
+package twoSequentialMissions;
 
 import javax.safetycritical.LaunchLevel2;
 

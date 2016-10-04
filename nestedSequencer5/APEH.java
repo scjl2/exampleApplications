@@ -15,7 +15,7 @@ class APEH extends AperiodicEventHandler
 	public APEH(PriorityParameters priority, AperiodicParameters release,
 			StorageParameters storage, String name, Mission controllingMission)
 	{
-		super(priority, release, storage, name);	
+		super(priority, release, storage, null);	
 		this.controllingMission = controllingMission;
 	}
 

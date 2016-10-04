@@ -16,7 +16,7 @@ class MainSequencer extends MissionSequencer<Mission>
 	public MainSequencer(PriorityParameters priority, StorageParameters storage,
 			String name) throws IllegalStateException
 	{
-		super(priority, storage, name);
+		super(priority, storage, null);
 	}
 
 	@Override

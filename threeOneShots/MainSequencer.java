@@ -7,7 +7,6 @@ import javax.safetycritical.StorageParameters;
 import javax.safetycritical.annotate.Level;
 import javax.safetycritical.annotate.SCJAllowed;
 
-import devices.Console;
 
 class MainSequencer extends MissionSequencer<Mission>
 {
@@ -16,7 +15,7 @@ class MainSequencer extends MissionSequencer<Mission>
 	public MainSequencer(PriorityParameters priority, StorageParameters storage,
 			String name) throws IllegalStateException
 	{
-		super(priority, storage, name);
+		super(priority, storage, null);
 	}
 
 	@Override

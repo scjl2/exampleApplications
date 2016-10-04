@@ -1,4 +1,4 @@
-package sequentialMissions;
+package twoSequentialMissions;
 
 import javax.safetycritical.Mission;
 import javax.safetycritical.annotate.Level;

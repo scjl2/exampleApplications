@@ -29,7 +29,6 @@ public class MySafelet implements Safelet<Mission>
 
 		storageParameters_topLevelSequencer = new StorageParameters(
 				Const.OVERALL_BACKING_STORE_DEFAULT - 1000000,
-				new long[] { Const.HANDLER_STACK_SIZE },
 				Const.PRIVATE_MEM_DEFAULT, 10000 * 2, Const.MISSION_MEM_DEFAULT);
 		
 		return new MainMissionSequencer(new PriorityParameters(5),
@@ -66,14 +65,12 @@ public class MySafelet implements Safelet<Mission>
 
 		storageParameters_nestedSequencer = new StorageParameters(
 				1000000,
-		new long[] { Const.HANDLER_STACK_SIZE },
 		100000, 
 		10000 ,
 		0);
 
 		storageParameters_Schedulable = new StorageParameters(
 				1000000,
-		new long[] { Const.HANDLER_STACK_SIZE },
 		10000, 
 		10000 ,
 		0);

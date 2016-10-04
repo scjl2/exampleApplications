@@ -13,7 +13,7 @@ public class MyPEH3 extends PeriodicEventHandler
 
 	public MyPEH3(PriorityParameters priority, PeriodicParameters release, StorageParameters storage, Mission m) 
 	{
-		super(priority, release, storage);
+		super(priority, release, storage, null);
 		this.m = m;			
 	}
 

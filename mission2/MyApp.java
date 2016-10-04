@@ -18,7 +18,6 @@ class MyApp implements Safelet<Mission>
 	static PriorityParameters pri = new PriorityParameters(5);
 	static StorageParameters storage = new StorageParameters(
 			Const.OVERALL_BACKING_STORE_DEFAULT - 1000000,
-			new long[] { Const.HANDLER_STACK_SIZE },
 			Const.PRIVATE_MEM_DEFAULT, 10000 * 2, Const.MISSION_MEM_DEFAULT);
 	
 

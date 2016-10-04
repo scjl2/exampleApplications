@@ -16,7 +16,7 @@ class OSEH3 extends OneShotEventHandler
 	public OSEH3(PriorityParameters pri, HighResolutionTime start,
 			AperiodicParameters aParams, StorageParameters storage, Mission controllingMission)
 	{
-		super(pri, start, aParams, storage);
+		super(pri, start, aParams, storage, null);
 		
 		this.controllingMision = controllingMission;
 	}
