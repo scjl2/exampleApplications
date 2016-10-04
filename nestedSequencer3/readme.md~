@@ -1,0 +1,6 @@
+nestedSequencer2
+=======
+
+Classes : 8
+
+A mission, with a nested mission sequencer that has two sequential nested missions, each with a managed thread.
