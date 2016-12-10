@@ -19,9 +19,7 @@ class MyMission extends Mission
 		
 //		PeriodicParameters pParams = new PeriodicParameters(new RelativeTime(60,0), new RelativeTime(5,0));
 		PEH peh = new PEH(MyApp.pri, new PeriodicParameters(new RelativeTime(60,0), new RelativeTime(5,0)) ,MyApp.storage, "PEH", apeh);
-		peh.register();
-		
-		
+		peh.register();		
 	}
 
 	@Override
@@ -29,6 +27,5 @@ class MyMission extends Mission
 	public long missionMemorySize()
 	{
 		return 1048576;
-	}
-	
+	}	
 }

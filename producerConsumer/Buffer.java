@@ -6,18 +6,19 @@ import devices.Console;
 
 public class Buffer
 {
-  private volatile int buffer;
+  private volatile int theBuffer;
+  private int[] testArray = new int[10];
 
   public Buffer()
   {
-    buffer = 0;
+    theBuffer = 0;
     Services.setCeiling(this, 20);
   }
 
   public boolean bufferEmpty(String name)
   {
     Console.println(name + " Checking Buffer Empty");
-    return buffer == 0;
+    return theBuffer == 0;
   }
 
   public synchronized void write(int update) throws InterruptedException
@@ -33,7 +34,7 @@ public class Buffer
     }
 
     Console.println("Producer writing" + update + " to Buffer");
-    buffer = update;
+    theBuffer = update;
     this.notify();
   }
 
@@ -48,9 +49,9 @@ public class Buffer
       bufferEmpty = bufferEmpty("Consumer");
     }
 
-    int out = buffer;
+    int out = theBuffer;
     Console.println("Consumer reading " + out + " from Buffer");
-    buffer = 0;
+    theBuffer = 0;
     this.notify();
 
     return out;
