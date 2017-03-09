@@ -20,11 +20,11 @@ public class PCSafelet implements Safelet<Mission>
 
 	public MissionSequencer<Mission> getSequencer()
 	{
-		Console.println("PCSafelet");
+	//	Console.println("PCSafelet");
 		// Create and return the main mission sequencer
 		StorageParameters storageParameters = new StorageParameters(
 				Const.OVERALL_BACKING_STORE_DEFAULT - 2000000,
-			
+
 				Const.PRIVATE_MEM_DEFAULT, 10000 * 2, Const.MISSION_MEM_DEFAULT);
 
 		return new PCMissionSequencer(new PriorityParameters(5),

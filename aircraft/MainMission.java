@@ -17,11 +17,7 @@ import javax.scj.util.Const;
 
 public class MainMission extends Mission
 {
-	/**
-	 * The read that the sensors will get when the aircraft is on the ground
-	 */
-	final double ALTITUDE_READING_ON_GROUND = 0.0;
-
+	
 
 	// Evn Mon Variables
 	private double cabinPressure;
@@ -81,7 +77,7 @@ public class MainMission extends Mission
 				Const.MISSION_MEM_DEFAULT - 100 * 1000);
 
 		// Load the submission sequencer and persistent handlers
-		ACModeChanger aCModeChanger = new ACModeChanger(new PriorityParameters(
+		ACModeChanger2 aCModeChanger = new ACModeChanger2(new PriorityParameters(
 				5), storageParameters, this);
 
 		aCModeChanger.register();
@@ -112,21 +108,6 @@ public class MainMission extends Mission
 
 		commsHandler.register();
 
-		AperiodicSimulator controlSim
-			= new AperiodicSimulator(
-				new PriorityParameters(5),
-				new PeriodicParameters(new RelativeTime(10, 0), null),
-				storageParametersSchedulable,
-				controlHandler);
-
-		controlSim.register();
-
-		//APeriodicSimulator commsSim = new AperiodicSimulator(
-		//		new PriorityParameters(5), new PeriodicParameters(
-		//				new RelativeTime(10, 0), null),
-		//		storageParametersSchedulable, commsHandler);
-
-		//commsSim.register();
 	}
 
 	/**
@@ -138,34 +119,34 @@ public class MainMission extends Mission
 		return Const.MISSION_MEM_DEFAULT;
 	}
 
-	public void setAirSpeed(double airSpeed)
+	public void setAirSpeed(double newAirSpeed)
 	{
-		this.airSpeed = airSpeed;
+		this.airSpeed = newAirSpeed;
 	}
 
-	public void setAltitude(double altitude)
+	public void setAltitude(double newAltitude)
 	{
-		this.altitude = altitude;
+		this.altitude = newAltitude;
 	}
 
-	public void setCabinPressure(double cabinPressure)
+	public void setCabinPressure(double newCabinPressure)
 	{
-		this.cabinPressure = cabinPressure;
+		this.cabinPressure = newCabinPressure;
 	}
 
-	public void setEmergencyOxygen(double emergencyOxygen)
+	public void setEmergencyOxygen(double newEmergencyOxygen)
 	{
-		this.emergencyOxygen = emergencyOxygen;
+		this.emergencyOxygen = newEmergencyOxygen;
 	}
 
-	public void setFuelRemaining(double fuelRemaining)
+	public void setFuelRemaining(double newFuelRemaining)
 	{
-		this.fuelRemaining = fuelRemaining;
+		this.fuelRemaining = newFuelRemaining;
 	}
 
-	public void setHeading(double heading)
+	public void setHeading(double newHeading)
 	{
-		this.heading = heading;
+		this.heading = newHeading;
 	}
 
 }

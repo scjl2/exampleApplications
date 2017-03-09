@@ -20,7 +20,7 @@ public class PCMissionSequencer extends MissionSequencer<Mission>
 
 	protected Mission getNextMission()
 	{
-		Console.println("PCMissionSequencer");
+	//	Console.println("PCMissionSequencer");
 
 		// As this sequencer only delivers one mission,
 		// if it has not been returned yet then return it,
@@ -28,7 +28,7 @@ public class PCMissionSequencer extends MissionSequencer<Mission>
 
 		if (!returnedMission)
 		{
-			Console.println("PCMissionSequencer returns mission");
+	//		Console.println("PCMissionSequencer returns mission");
 			returnedMission = true;
 			return new PCMission();
 		}

@@ -4,16 +4,12 @@ import javax.safetycritical.Mission;
 import javax.safetycritical.annotate.Level;
 import javax.safetycritical.annotate.SCJAllowed;
 
-import devices.Console;
-
 class MissionA extends Mission
 {
   @Override
   @SCJAllowed(Level.SUPPORT)
   protected void initialize()
   {
-    Console.println("MissionA initialize");
-
     MT1 thread1 = new MT1(MyApp.pri, MyApp.storage);
     thread1.register();
 

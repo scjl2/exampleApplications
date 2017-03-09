@@ -6,8 +6,6 @@ import javax.realtime.AperiodicParameters;
 import javax.realtime.PriorityParameters;
 import javax.realtime.HighResolutionTime;
 
-import devices.Console;
-
 public class NestedOneShotEventHandler extends OneShotEventHandler
 {
   public NestedOneShotEventHandler(PriorityParameters priority, HighResolutionTime time,
@@ -19,6 +17,5 @@ public class NestedOneShotEventHandler extends OneShotEventHandler
   @Override
   public void handleAsyncEvent()
   {
-    Console.println("Nested One-Shot: Release");
   }
 }

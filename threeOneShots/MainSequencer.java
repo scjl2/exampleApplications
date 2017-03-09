@@ -21,8 +21,6 @@ class MainSequencer extends MissionSequencer<Mission>
   @SCJAllowed(Level.SUPPORT)
   protected Mission getNextMission()
   {
-    // Console.println(getName()+ " getNextMission");
-
     if (notReleased)
     {
       notReleased = false;
@@ -33,5 +31,4 @@ class MainSequencer extends MissionSequencer<Mission>
       return null;
     }
   }
-
 }

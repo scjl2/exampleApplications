@@ -61,11 +61,11 @@ public class SafeLandingHandler extends AperiodicEventHandler
 		// in both cases this failure should be flagged somewhere
 		if (altitude < threshold)
 		{
-		  Console.println("Failure: Pull Up");
+		  //Console.println("Failure: Pull Up");
 			// Also perform some recovery action here, maybe a new mode
 		} else
 		{
-		  Console.println("Failure: Continue With Landing");
+		  //Console.println("Failure: Continue With Landing");
 		}
 	}
 

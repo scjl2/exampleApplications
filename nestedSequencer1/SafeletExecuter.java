@@ -1,7 +1,7 @@
 /** Simple Nested Sequencer
- * 
+ *
  * 	Executes the application's <code>Safelet</code>
- * 
+ *
  *   @author Matt Luckcuck <ml881@york.ac.uk>
  */
 package nestedSequencer1;

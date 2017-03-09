@@ -14,13 +14,11 @@ class MissionA extends Mission
 	@SCJAllowed(Level.SUPPORT)
 	protected void initialize()
 	{
-//		AperiodicParameters apParams = new AperiodicParameters(new RelativeTime(5, 0), null);
 		OSEH OneShot = new OSEH(MyApp.pri, new RelativeTime(60,0), new AperiodicParameters(new RelativeTime(5, 0), null), MyApp.storage, this);
 		OneShot.register();
-		
-		
+
 		MT thread = new MT(MyApp.pri, MyApp.storage, this);
-		thread.register();		
+		thread.register();
 	}
 
 	@Override
@@ -31,8 +29,5 @@ class MissionA extends Mission
 	}
 
 	public void systemAction()
-	{
-//		Console.println("Mission System Actions");		
-	}
-	
+	{}
 }

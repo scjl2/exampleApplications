@@ -10,8 +10,8 @@ public class Producer extends ManagedThread
 {
   private final PCMission pcMission;
   private final Buffer buffer;
-  
-  private int i = 1;
+
+
 
   public Producer(PriorityParameters priority, StorageParameters storage,
       PCMission pcMission)
@@ -25,7 +25,9 @@ public class Producer extends ManagedThread
 
   public void run()
   {
-    Console.println("Producer!");
+    //Console.println("Producer!");
+
+    int i = 1;
 
     while (!pcMission.terminationPending())
     {
@@ -40,8 +42,7 @@ public class Producer extends ManagedThread
 
       i++;
 
-      boolean keepWriting = i >= 5;
-      if (! keepWriting)
+      if ( i >= 5)
       {
         pcMission.requestTermination();
       }

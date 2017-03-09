@@ -22,7 +22,7 @@ public class TakeOffMonitor extends PeriodicEventHandler
 	 * Controlling mission
 	 */
 	private final MainMission mainMission ;
-	private final TakeOffMission takeoffMission;
+	private final TakeOffMission takeOffMission;
 
 	private double takeOffAltitude;
 	private AperiodicEventHandler landingGearHandler;
@@ -48,7 +48,7 @@ public class TakeOffMonitor extends PeriodicEventHandler
 	{
 		super(priority, periodic, storage, null);
 		this.mainMission = mainMission;
-		this.takeoffMission = takeOffMission;
+		this.takeOffMission = takeOffMission;
 		this.takeOffAltitude = takeOffAltitude;
 		this.landingGearHandler = landingGearHandler;
 
@@ -60,18 +60,18 @@ public class TakeOffMonitor extends PeriodicEventHandler
 	@Override
 	public void handleAsyncEvent()
 	{
-	  Console.println("Reading Altitude");
+	  //Console.println("Reading Altitude");
 
 	//	double altitude = takeoffMission.getControllingMission().getAltitude();
 	//REFACTORING
 
-double altitude = mainMission.getAltitude();
+		double altitude = mainMission.getAltitude();
 
 		if (altitude > takeOffAltitude)
 		{
-			System.out.println("Take Off Complete");
+			//Console.println("Take Off Complete");
 			landingGearHandler.release();
-			takeoffMission.requestTermination();
+			takeOffMission.requestTermination();
 		}
 
 	}

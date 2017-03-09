@@ -6,28 +6,20 @@ import javax.safetycritical.AperiodicEventHandler;
 import javax.safetycritical.PeriodicEventHandler;
 import javax.safetycritical.StorageParameters;
 
-import devices.Console;
-
 class PEH extends PeriodicEventHandler
 {
-	private AperiodicEventHandler apeh = null;
+	private AperiodicEventHandler apeh;
 
-	PEH(PriorityParameters priority, PeriodicParameters release,
+	public PEH(PriorityParameters priority, PeriodicParameters release,
 			StorageParameters storage, String name, AperiodicEventHandler apeh)
 	{
-		super(priority, release, storage, null);	
-		if(apeh == null)
-		{
-			throw new IllegalArgumentException("apeh cannot be null");
-		}
+		super(priority, release, storage, null);
 		this.apeh=apeh;
 	}
 
 	@Override
 	public void handleAsyncEvent()
 	{
-		Console.println("PEH Release");
-				
 		apeh.release();
 	}
 }

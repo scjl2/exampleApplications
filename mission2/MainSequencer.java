@@ -7,8 +7,6 @@ import javax.safetycritical.StorageParameters;
 import javax.safetycritical.annotate.Level;
 import javax.safetycritical.annotate.SCJAllowed;
 
-import devices.Console;
-
 class MainSequencer extends MissionSequencer<Mission>
 {
   private boolean notReleased = true;
@@ -23,7 +21,6 @@ class MainSequencer extends MissionSequencer<Mission>
   @SCJAllowed(Level.SUPPORT)
   protected Mission getNextMission()
   {
-    // Console.println(getName()+ " getNextMission");
     if (notReleased)
     {
       notReleased = false;
@@ -34,5 +31,4 @@ class MainSequencer extends MissionSequencer<Mission>
       return null;
     }
   }
-
 }

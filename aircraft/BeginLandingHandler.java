@@ -20,7 +20,7 @@ public class BeginLandingHandler extends AperiodicEventHandler
 
 	/**
 	 * Class Constructor
-	 * 
+	 *
 	 * @param priorityParameters
 	 *            the priority parameters for this handler
 	 * @param periodicParameters
@@ -44,7 +44,7 @@ public class BeginLandingHandler extends AperiodicEventHandler
 	@Override
 	public void handleAsyncEvent()
 	{
-	  Console.println("Begin Landing");
+	  //Console.println("Begin Landing");
 		controllingMission.requestTermination();
 
 	}

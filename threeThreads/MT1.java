@@ -13,7 +13,6 @@ class MT1 extends ManagedThread
   {
     super(pri, storage, null);
   }
-
   
   @Override
   public void run()

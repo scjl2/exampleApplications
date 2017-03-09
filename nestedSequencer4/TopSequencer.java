@@ -27,7 +27,6 @@ class TopSequencer extends MissionSequencer<Mission>
 
     if (notReleased)
     {
-
       notReleased = false;
       return new TopMission();
     }
@@ -36,5 +35,4 @@ class TopSequencer extends MissionSequencer<Mission>
       return null;
     }
   }
-
 }

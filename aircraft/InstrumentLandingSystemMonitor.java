@@ -44,7 +44,7 @@ public class InstrumentLandingSystemMonitor extends PeriodicEventHandler
 	@Override
 	public void handleAsyncEvent()
 	{
-	  Console.println("Checking ILS");
+	  //Console.println("Checking ILS");
 
 	}
 

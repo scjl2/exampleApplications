@@ -17,7 +17,7 @@ public class CommunicationsHandler extends AperiodicEventHandler
 {
 	/**
 	 * Class Constructor
-	 * 
+	 *
 	 * @param priorityParameters
 	 *            the priority parameters for this handler
 	 * @param periodicParameters
@@ -39,6 +39,6 @@ public class CommunicationsHandler extends AperiodicEventHandler
 	@Override
 	public void handleAsyncEvent()
 	{
-	  Console.println("Handling Comms");
+	  //Console.println("Handling Comms");
 	}
 }

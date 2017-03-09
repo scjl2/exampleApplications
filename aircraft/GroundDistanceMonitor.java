@@ -39,12 +39,12 @@ public class GroundDistanceMonitor extends PeriodicEventHandler
 	 */
 	public GroundDistanceMonitor(PriorityParameters priority,
 			PeriodicParameters periodic, StorageParameters storage,
-			MainMission mainMission)
+			MainMission mainMission, double readingOnGround)
 	{
 		super(priority, periodic, storage, null);
 
 		this.mainMission = mainMission;
-		this.readingOnGround = mainMission.ALTITUDE_READING_ON_GROUND;
+		this.readingOnGround = readingOnGround;
 	}
 
 	/**
@@ -53,13 +53,13 @@ public class GroundDistanceMonitor extends PeriodicEventHandler
 	@Override
 	public void handleAsyncEvent()
 	{
-		System.out.println("Checking Ground Distance");
+		//Console.println("Checking Ground Distance");
 		// read this value from sensors
 		double distance = mainMission.getAltitude();
 
 		if (distance == readingOnGround)
 		{
-		  Console.println("Aircraft Landed, Terminating Mission");
+		  //Console.println("Aircraft Landed, Terminating Mission");
 			mainMission.requestTermination();
 		}
 	}

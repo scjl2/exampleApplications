@@ -20,7 +20,7 @@ public class LandingGearHandler extends AperiodicEventHandler
 	/**
 	 * The controlling mission of this handler
 	 */
-		private final LandingGearUser mission;
+		private final TakeOffMission mission;
 
 	/**
 	 * Class Constructor
@@ -38,7 +38,7 @@ public class LandingGearHandler extends AperiodicEventHandler
 	 */
 	public LandingGearHandler(PriorityParameters priority,
 			AperiodicParameters release, StorageParameters storage,
-			String name, LandingGearUser mission)
+			String name, TakeOffMission mission)
 	{
 		super(priority, release, storage, null);
 
@@ -51,7 +51,7 @@ public class LandingGearHandler extends AperiodicEventHandler
 	@Override
 	public void handleAsyncEvent()
 	{
-	  Console.println("Deploying Landing Gear");
+	  //Console.println("Deploying Landing Gear");
 
 		boolean landingGearIsDeployed = mission.isLandingGearDeployed();
 

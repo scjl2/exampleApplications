@@ -16,11 +16,12 @@ import javax.safetycritical.Mission;
 
 import devices.Console;
 
-public class LandMission extends Mission implements LandingGearUser
+public class LandMission extends Mission
 {
 	private final MainMission controllingMission;
 
 	final double SAFE_LANDING_ALTITUDE = 10.00;
+	final double ALTITUDE_READING_ON_GROUND = 0.0;
 
 	private boolean abort = false;
 
@@ -51,7 +52,7 @@ public class LandMission extends Mission implements LandingGearUser
 		GroundDistanceMonitor groundDistanceMonitor = new GroundDistanceMonitor(
 				new PriorityParameters(5), new PeriodicParameters(
 						new RelativeTime(0, 0), new RelativeTime(10, 0)),
-				storageParametersSchedulable, controllingMission);
+				storageParametersSchedulable, controllingMission, ALTITUDE_READING_ON_GROUND);
 		groundDistanceMonitor.register();
 
 		LandingGearHandlerLand landingHandler = new LandingGearHandlerLand(
@@ -87,19 +88,19 @@ public class LandMission extends Mission implements LandingGearUser
 	 * called when landing gear is deployed, sets
 	 * <code>LandingGearDeployed</code> to <code>true</code>
 	 */
-	 @Override
-	public synchronized void deployLandingGear()
+
+	public void deployLandingGear()
 	{
 		landingGearDeployed = true;
 	}
 
-	@Override
+
 	public void stowLandingGear()
 	{
 		landingGearDeployed = false;
 	}
 
-	@Override
+
 	public boolean isLandingGearDeployed()
 	{
 		return landingGearDeployed;
@@ -108,7 +109,7 @@ public class LandMission extends Mission implements LandingGearUser
 	@Override
 	public boolean cleanUp()
 	{
-	  Console.println("Land Mission Cleanup");
+	  //Console.println("Land Mission Cleanup");
 		return false;
 	}
 

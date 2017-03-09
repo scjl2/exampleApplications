@@ -52,7 +52,7 @@ public class LandingGearHandlerLand extends AperiodicEventHandler
 	@Override
 	public void handleAsyncEvent()
 	{
-	  Console.println("Deploying Landing Gear");
+	  //Console.println("Deploying Landing Gear");
 
 		boolean landingGearIsDeployed = mission.isLandingGearDeployed();
 

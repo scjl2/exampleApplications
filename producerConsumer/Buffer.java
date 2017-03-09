@@ -7,7 +7,6 @@ import devices.Console;
 public class Buffer
 {
   private volatile int theBuffer;
-  private int[] testArray = new int[10];
 
   public Buffer()
   {
@@ -23,34 +22,38 @@ public class Buffer
 
   public synchronized void write(int update) throws InterruptedException
   {
-    boolean bufferEmpty = bufferEmpty("Producer");
-    while (!bufferEmpty)
+    //Refactoring
+  //  boolean bufferEmpty = bufferEmpty("Producer");
+    while (!bufferEmpty("Producer"))
+  //  while (!bufferEmpty)
     {
-      Console.println("Producer Waiting on Buffer");
+      //Console.println("Producer Waiting on Buffer");
 
       this.wait();
 
-      bufferEmpty = bufferEmpty("Producer");
+  //    bufferEmpty = bufferEmpty("Producer");
     }
 
-    Console.println("Producer writing" + update + " to Buffer");
+  //  Console.println("Producer writing" + update + " to Buffer");
     theBuffer = update;
     this.notify();
   }
 
   public synchronized int read() throws InterruptedException
   {
-    boolean bufferEmpty = bufferEmpty("Consumer");
-    while (bufferEmpty)
-      Console.println("Consumer" + " Waiting on Buffer");
+      //Refactoring
+  //  boolean bufferEmpty = bufferEmpty("Consumer");
+    while (bufferEmpty("Consumer"))
     {
+        //  Console.println("Consumer" + " Waiting on Buffer");
+
       this.wait();
 
-      bufferEmpty = bufferEmpty("Consumer");
+    //  bufferEmpty = bufferEmpty("Consumer");
     }
 
     int out = theBuffer;
-    Console.println("Consumer reading " + out + " from Buffer");
+  //  Console.println("Consumer reading " + out + " from Buffer");
     theBuffer = 0;
     this.notify();
 

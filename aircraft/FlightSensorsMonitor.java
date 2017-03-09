@@ -1,7 +1,7 @@
 /** Aircraft - Mode Change Example
- * 
+ *
  * 	This class monitors the Aircraft's flight sensors --altitude, air speed, etc.
- * 
+ *
  *   @author Matt Luckcuck <ml881@york.ac.uk>
  */
 package aircraft;
@@ -19,7 +19,7 @@ public class FlightSensorsMonitor extends PeriodicEventHandler
 
 	/**
 	 * Class Constructor
-	 * 
+	 *
 	 * @param priority
 	 *            priority parameters
 	 * @param periodic
@@ -31,10 +31,10 @@ public class FlightSensorsMonitor extends PeriodicEventHandler
 	 */
 	public FlightSensorsMonitor(PriorityParameters priority,
 			PeriodicParameters periodic, StorageParameters storage,
-			String name, MainMission mainMission)
+			String name, MainMission controllingMission)
 	{
 		super(priority, periodic, storage, null);
-		controllingMission = mainMission;
+		this.controllingMission = controllingMission;
 	}
 
 	/**
@@ -43,7 +43,7 @@ public class FlightSensorsMonitor extends PeriodicEventHandler
 	@Override
 	public void handleAsyncEvent()
 	{
-	  Console.println("Checking Flight Sensors");
+	  //Console.println("Checking Flight Sensors");
 
 		// read air speed
 		controllingMission.setAirSpeed(0);

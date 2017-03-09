@@ -11,21 +11,18 @@ import javax.safetycritical.annotate.SCJAllowed;
 import javax.safetycritical.annotate.SCJRestricted;
 import javax.scj.util.Const;
 
-import devices.Console;
-
 class MyApp implements Safelet<Mission>
 {
 	static PriorityParameters pri = new PriorityParameters(5);
 	static StorageParameters storage = new StorageParameters(
 			Const.OVERALL_BACKING_STORE_DEFAULT - 1000000,
 			Const.PRIVATE_MEM_DEFAULT, 10000 * 2, Const.MISSION_MEM_DEFAULT);
-	
 
 	@Override
 	@SCJAllowed(Level.SUPPORT)
 	@SCJRestricted(Phase.INITIALIZE)
 	public MissionSequencer<Mission> getSequencer()
-	{		
+	{
 		MissionSequencer<Mission> mainSequencer = new MainSequencer(pri, storage, "Main Sequencer");
 		return mainSequencer;
 	}
@@ -41,8 +38,5 @@ class MyApp implements Safelet<Mission>
 	@SCJAllowed(Level.SUPPORT)
 	@SCJRestricted(Phase.INITIALIZE)
 	public void initializeApplication()
-	{
-		Console.println("Init Application");		
-	}
-	
+	{	}
 }

@@ -17,7 +17,7 @@ public class LandHandler extends AperiodicEventHandler
 {
 	/**
 	 * Class Constructor
-	 * 
+	 *
 	 * @param priorityParameters
 	 *            the priority parameters for this handler
 	 * @param periodicParameters
@@ -40,7 +40,7 @@ public class LandHandler extends AperiodicEventHandler
 	@Override
 	public void handleAsyncEvent()
 	{
-	  Console.println("Handling Landing");
+	  //Console.println("Handling Landing");
 
 	}
 }

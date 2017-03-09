@@ -6,25 +6,25 @@ import javax.safetycritical.StorageParameters;
 import javax.realtime.PeriodicParameters;
 import javax.realtime.PriorityParameters;
 
-public class MyPEH3 extends PeriodicEventHandler 
+public class MyPEH3 extends PeriodicEventHandler
 {
 	int count = 0;
 	Mission m;
 
-	public MyPEH3(PriorityParameters priority, PeriodicParameters release, StorageParameters storage, Mission m) 
+	public MyPEH3(PriorityParameters priority, PeriodicParameters release, StorageParameters storage, Mission m)
 	{
 		super(priority, release, storage, null);
-		this.m = m;			
+		this.m = m;
 	}
 
-	public void handleAsyncEvent() 
+	public void handleAsyncEvent()
 	{
 //		devices.Console.println(getName() + ":handleAsyncEvent");
 		count++;
 
-		if (count == 10) 
-        {
-			m.requestTermination();			
+		if (count == 10)
+    {
+			m.requestTermination();
 		}
 	}
 }

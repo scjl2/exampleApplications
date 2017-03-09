@@ -19,13 +19,11 @@ class MyApp implements Safelet<MyMission>
 			Const.OVERALL_BACKING_STORE_DEFAULT - 1000000,
 			Const.PRIVATE_MEM_DEFAULT, 10000 * 2, Const.MISSION_MEM_DEFAULT);
 
-	
-
 	@Override
 	@SCJAllowed(Level.SUPPORT)
 	@SCJRestricted(Phase.INITIALIZE)
 	public MissionSequencer<MyMission> getSequencer()
-	{		
+	{
 		MissionSequencer<MyMission> mainSequencer = new MainSequencer(pri, storage, "Main Sequencer");
 		return mainSequencer;
 	}
@@ -41,8 +39,5 @@ class MyApp implements Safelet<MyMission>
 	@SCJAllowed(Level.SUPPORT)
 	@SCJRestricted(Phase.INITIALIZE)
 	public void initializeApplication()
-	{
-		Console.println("Init Application");		
-	}
-	
+	{}
 }

@@ -1,6 +1,6 @@
 /** Simple Nested Sequencer
- * 
- * 
+ *
+ *
  *   @author Matt Luckcuck <ml881@york.ac.uk>
  */
 package nestedSequencer1;
@@ -10,8 +10,6 @@ import javax.safetycritical.Mission;
 import javax.safetycritical.MissionSequencer;
 import javax.safetycritical.StorageParameters;
 
-import devices.Console;
-
 public class NestedMissionSequencer extends MissionSequencer<Mission>
 {
 
@@ -20,15 +18,11 @@ public class NestedMissionSequencer extends MissionSequencer<Mission>
   public NestedMissionSequencer(PriorityParameters priority, StorageParameters storage)
   {
     super(priority, storage, null);
-    Console.println("Nested Mission Sequencer: Construct ");
-
   }
 
   @Override
   protected Mission getNextMission()
   {
-    Console.println("Mode Changer: getNextMission ");
-
     if (returnedMission)
     {
       return null;
@@ -38,7 +32,5 @@ public class NestedMissionSequencer extends MissionSequencer<Mission>
       returnedMission = true;
       return new NestedMission();
     }
-
   }
-
 }

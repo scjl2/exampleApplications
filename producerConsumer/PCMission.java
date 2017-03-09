@@ -24,7 +24,7 @@ public class PCMission extends Mission
 	protected void initialize()
 	{
 		StorageParameters storageParameters = new StorageParameters(150 * 1000,
-				
+
 				Const.PRIVATE_MEM_DEFAULT, Const.IMMORTAL_MEM_DEFAULT,
 				Const.MISSION_MEM_DEFAULT - 100 * 1000);
 
@@ -32,20 +32,20 @@ public class PCMission extends Mission
 
 		new Consumer(new PriorityParameters(10), storageParameters, this).register();
 
-		
 
-		Console.println("FlatBufferMission init");
+
+	//	Console.println("FlatBufferMission init");
 	}
 
 	public Buffer getBuffer()
 	{
 		return buffer;
 	}
-	
+
 
   public boolean cleanUp()
 	{
-		Console.print("PCMission Cleanup");
+	//	Console.print("PCMission Cleanup");
 		return false;
 	}
 

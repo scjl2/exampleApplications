@@ -16,15 +16,11 @@ import javax.safetycritical.Mission;
 
 import devices.Console;
 
-public class TakeOffMission extends Mission implements LandingGearUser
+public class TakeOffMission extends Mission
 {
 	final double SAFE_AIRSPEED_THRESHOLD = 10.00;
 	final double TAKEOFF_ALTITUDE = 10.00;
-
-
-
 	private MainMission controllingMission;
-
 	private boolean abort = false;
 
 	/**
@@ -43,8 +39,6 @@ public class TakeOffMission extends Mission implements LandingGearUser
 	@Override
 	protected void initialize()
 	{
-
-
 		StorageParameters storageParametersSchedulable = new StorageParameters(
 				Const.PRIVATE_MEM_DEFAULT - 30 * 1000,
 				Const.PRIVATE_MEM_DEFAULT - 30 * 1000,
@@ -75,7 +69,6 @@ public class TakeOffMission extends Mission implements LandingGearUser
 				SAFE_AIRSPEED_THRESHOLD);
 
 		takeOffFailureHandler.register();
-
 	}
 
 	/**
@@ -87,14 +80,12 @@ public class TakeOffMission extends Mission implements LandingGearUser
 		return Const.MISSION_MEM_DEFAULT;
 	}
 
-
 	public void takeOffAbort()
 	{
 		abort = true;
 	}
 
-	@Override
-	public synchronized void deployLandingGear()
+	public void deployLandingGear()
 	{
 		landingGearDeployed = true;
 	}
@@ -102,17 +93,15 @@ public class TakeOffMission extends Mission implements LandingGearUser
 	@Override
 	public boolean cleanUp()
 	{
-	  Console.println("Take Off Mission Cleanup, Returning " + !abort);
+	  //Console.println("Take Off Mission Cleanup, Returning " + !abort);
 		return !abort;
 	}
 
-	@Override
 	public void stowLandingGear()
 	{
 		landingGearDeployed = false;
 	}
 
-	@Override
 	public boolean isLandingGearDeployed()
 	{
 		return landingGearDeployed;

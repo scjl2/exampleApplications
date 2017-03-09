@@ -12,8 +12,6 @@ class MissionA extends Mission
   @SCJAllowed(Level.SUPPORT)
   protected void initialize()
   {
-    // AperiodicParameters apParams = new AperiodicParameters(new
-    // RelativeTime(5, 0), null);
     OSEH1 OneShot = new OSEH1(MyApp.pri, new RelativeTime(60, 0),
         new AperiodicParameters(new RelativeTime(5, 0), null), MyApp.storage, this);
     OneShot.register();
@@ -25,7 +23,6 @@ class MissionA extends Mission
     OSEH3 OneShot3 = new OSEH3(MyApp.pri, new RelativeTime(60, 0),
         new AperiodicParameters(new RelativeTime(5, 0), null), MyApp.storage, this);
     OneShot3.register();
-
   }
 
   @Override
@@ -34,5 +31,4 @@ class MissionA extends Mission
   {
     return 1048576;
   }
-
 }

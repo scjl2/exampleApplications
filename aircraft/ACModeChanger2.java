@@ -14,11 +14,11 @@ import javax.safetycritical.Mission;
 
 import devices.Console;
 
-public class ACModeChanger extends MissionSequencer<Mission> 
+public class ACModeChanger2 extends MissionSequencer<Mission>
 {
 	private MainMission controllingMission;
 
-	public ACModeChanger(PriorityParameters priority,
+	public ACModeChanger2(PriorityParameters priority,
 			StorageParameters storage, MainMission controllingMission)
 	{
 		super(priority, storage, null);
@@ -30,10 +30,6 @@ public class ACModeChanger extends MissionSequencer<Mission>
 	 * with
 	 */
 	private int modesLeft = 3;
-	/**
-	 * A reference to a mode
-	 */
-	private Mode currentMode, launchMode, cruiseMode, landMode;
 
 	/**
 	 * Class constructor
@@ -43,20 +39,15 @@ public class ACModeChanger extends MissionSequencer<Mission>
 	 * @param storage
 	 *            the storage parameters for this mission sequencer
 	 */
-	public ACModeChanger(PriorityParameters priority, StorageParameters storage)
+	public ACModeChanger2(PriorityParameters priority, StorageParameters storage)
 	{
 		super(priority, storage, null);
-		launchMode = (Mode) new TakeOffMission(controllingMission);
-		cruiseMode = (Mode) new CruiseMission(controllingMission);
-		landMode = (Mode) new LandMission(controllingMission);
-
-	}
 	
+	}
+
 	@Override
 	protected Mission getNextMission()
 	{
-		return (Mission) currentMode;
-
 		if (modesLeft == 3)
 		{
 			modesLeft--;
@@ -74,7 +65,7 @@ public class ACModeChanger extends MissionSequencer<Mission>
 		{
 			return null;
 		}
-		
+
 	}
 
 }

@@ -66,7 +66,7 @@ public class ACModeChanger extends MissionSequencer<Mission> implements ModeChan
 	 */
 	public synchronized void advanceMode()
 	{
-		System.out.println("Advance To Next Mode");
+		//System.out.println("Advance To Next Mode");
 		// check the value of the modes variable and changeTo the associated
 		// mode
 		// once all the missions have been run, changeTo null to terminate the

@@ -48,8 +48,6 @@ public class TakeOffFailureHandler extends AperiodicEventHandler
 		this.takeoffMission = takeoffMission;
 		this.mainMission = mainMission;
 		this.threshold = threshold;
-
-
 	}
 
 	/**
@@ -65,17 +63,18 @@ public class TakeOffFailureHandler extends AperiodicEventHandler
 
    //MainMission mission = takeoffMission.getControllingMission();
 
-	double currentSpeed = mainMission.getAirSpeed();
+		double currentSpeed = mainMission.getAirSpeed();
+
 
 		// in both cases this failure should be flagged somewhere
 		if (currentSpeed < threshold)
 		{
-			System.out.println("Failure: Aborting");
+			//Console.println("Failure: Aborting");
 			takeoffMission.takeOffAbort();
 			takeoffMission.requestTermination();
 		} else
 		{
-		  Console.println("Failure: Continue and Land");
+		  //Console.println("Failure: Continue and Land");
 		}
 	}
 

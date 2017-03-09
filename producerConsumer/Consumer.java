@@ -23,7 +23,7 @@ public class Consumer extends ManagedThread
 
   public void run()
   {
-    Console.println("Consumer!");
+    //Console.println("Consumer!");
 
     while (!pcMission.terminationPending())
     {
@@ -36,7 +36,7 @@ public class Consumer extends ManagedThread
       {
         e.printStackTrace();
       }
-      Console.println("Consumer Read " + result + " from Buffer");
+    //  Console.println("Consumer Read " + result + " from Buffer");
 
     }
   }
